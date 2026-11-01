@@ -3,6 +3,8 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+        # Time Complexity: O(n) where n = len(s)
+        # Space Complexity: O(n) due to recursion stack (call depth). For O(1) extra space, consider an iterative two-pointer loop.
         # Initialize right pointer on the first call
         if r is None:
             r = len(s) - 1
@@ -16,6 +18,7 @@ class Solution:
         
         # Recursive call moving pointers inward
         self.reverseString(s, i + 1, r - 1)
+        # After this recursion finishes, the entire list s will be reversed in-place.
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
