@@ -1,24 +1,17 @@
 class Solution:
-    def maxFrequency(self, nums: List[int], k: int) -> int:
-
+    def maxFrequency(self, nums: list[int], k: int) -> int:
         nums.sort()
+        l,r =0,0
+        res,total=0,0
+        while r<len(nums):
+            total += nums[r]
+            while nums[r]*(r-l+1)>total+k:
+                total -=nums[l]
+                l +=1
 
-        left = 0
-        total = 0
-        ans = 0
-
-        for right in range(len(nums)):
-
-            total += nums[right]
-
-            while (nums[right] * (right - left + 1) - total) > k:
-
-                total -= nums[left]
-                left += 1
-
-            ans = max(ans, right - left + 1)
-
-        return ans
+            res =max(res ,(r-l+1))
+            r +=1
+        return res
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
