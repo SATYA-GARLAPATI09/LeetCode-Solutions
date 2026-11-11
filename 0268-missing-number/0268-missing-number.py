@@ -1,12 +1,18 @@
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
-        xor_sum = 0
+        xor1 = 0
+        xor2 = 0
         n = len(nums)
         
-        for i, num in enumerate(nums):
-            xor_sum ^= i ^ num  # XOR the index and the array element together
+        # XOR all numbers from 0 to n
+        for i in range(n + 1):
+            xor1 ^= i
             
-        return xor_sum ^ n      # Finally, XOR the missing upper bound `n`
+        # XOR all elements in the array
+        for num in nums:
+            xor2 ^= num
+            
+        return xor1 ^ xor2
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
