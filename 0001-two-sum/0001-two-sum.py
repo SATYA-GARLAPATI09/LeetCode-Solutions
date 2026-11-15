@@ -1,17 +1,13 @@
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
+        hm={}
+        for i in range (len(nums)):
+            ne = target-nums[i]
+            if ne in hm:
+                return[hm[ne] , i]
 
-        hash_map = {}
-
-        for i in range(len(nums)):
-
-            needed = target - nums[i]
-
-            if needed in hash_map:
-                return [hash_map[needed], i]
-
-            hash_map[nums[i]] = i
+            hm[nums[i]]=i
 
 
 # Synced seamlessly with LeetHub Pro
