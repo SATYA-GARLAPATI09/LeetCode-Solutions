@@ -16,15 +16,9 @@ class Solution:
 
             else:
                 cnt -= 1
+        return el
 
-        cnt1 = 0
-
-        for i in range(len(nums)):
-            if nums[i] == el:
-                cnt1 += 1
-
-        if cnt1 > (len(nums) // 2):
-            return el
+       
 
 
 # Synced seamlessly with LeetHub Pro
