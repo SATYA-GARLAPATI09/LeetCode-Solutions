@@ -1,9 +1,8 @@
 class Solution:
     def generate(self, numRows: int) -> list[list[int]]:
         def ansRow(num: int) -> list[int]:
-            row = []
+            row = [1]
             ans = 1
-            row.append(ans)
             for i in range(1, num + 1):
                 ans = ans * (num - i + 1) // i
                 row.append(ans)
