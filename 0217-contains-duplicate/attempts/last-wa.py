@@ -1,16 +1,12 @@
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        n = len(nums)
-        cnt =0
+        hashmap ={}
+        for i in range(len(nums)):
+            if nums[i] in hashmap:
+                return True
+            hashmap[i] = nums[i]
+        return False
 
-        for i in range(n):
-            for j in range (i+1,n):
-                if nums[i]==nums[j]:
-                    cnt +=1
-        if cnt ==0:
-            return False
-        else:
-            return True
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
